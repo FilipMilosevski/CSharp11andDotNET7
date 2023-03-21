@@ -1,6 +1,6 @@
-﻿using HelloCSharpSayHello.myClass;
+﻿using Filip1.myClass;
 
-namespace HelloCSharpSayHello
+namespace Filip1
 {
     internal class Program
     {
@@ -8,12 +8,11 @@ namespace HelloCSharpSayHello
         {
             string myName = Console.ReadLine();
             Console.WriteLine("Hello, World!");
-            Console.WriteLine("HELLO my name is Filip");
+            Console.WriteLine("AAAAA");
             Console.Write("Hello");
-            Console.Write(" my name is..." +myName);
+            Console.Write(" my name is " +myName);
 
-            Class1 myClass1 = new Class1();
-           
+            NC myclass1 = new NC();
         }
     }
 }

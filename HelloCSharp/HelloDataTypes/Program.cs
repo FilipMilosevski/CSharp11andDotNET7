@@ -19,6 +19,11 @@ namespace HelloDataTypes
             Console.WriteLine("My Char is:" + myChar);
             Console.WriteLine("My Date is:" + myDate);
 
+
+            Console.WriteLine("FILIP");
+            Console.WriteLine("FICO");
+
+
             Class1 myClass = new Class1();
             myClass.MyProperty = 1;
             int mySecondInt = myClass.MyProperty;

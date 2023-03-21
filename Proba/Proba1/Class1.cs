@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Proba1.myClass;
+
+public class Class1
+{
+    int myInt = 15;
+    public int MyProperty { get; set; }
+    public void ShowMyInt()
+    {
+        Console.WriteLine(myInt);
+    }
+}
