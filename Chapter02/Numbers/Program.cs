@@ -51,3 +51,26 @@ else
 
 
 
+Console.WriteLine("Practice");
+decimal aa = 0.9M;
+decimal bb = 0.9M;
+if ( aa+bb == 1.8M)
+{
+    Console.WriteLine($"{aa} + {bb} equals {1.8M}");
+}
+else
+{
+    Console.WriteLine($"{aa} + {bb} does NOT equal {1.8M}");
+}
+
+
+decimal x = 1.5M;
+decimal y = 1.5M;
+if (x+y == 3.0M)
+{
+    Console.WriteLine($"{x} + {y} equals  {3.0M}");
+}
+else
+{
+    Console.WriteLine($"{x} + {y} does NOT equal {3.0M}");
+}

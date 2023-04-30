@@ -8,6 +8,20 @@ int length2 = ((string)name).Length;
 Console.WriteLine($"{name} has {length2} characters.");
 
 
+object a = 1.91;
+object b = "Filip";
+Console.WriteLine($"{a} is {b} metres tall.");
+int l1 = ((string)b).Length;
+Console.WriteLine($"{b} has {l1} characters");
+
+
+object c = 1.95;
+object d = "Markijan";
+Console.WriteLine($"{c} is {d} metres tall");
+int l2 = ((string)d).Length;
+Console.WriteLine($"{d} has {l2} characters");
+
+
 
 
 // storing a string in a dynamic object
@@ -66,4 +80,7 @@ Console.WriteLine($"Number has been set to: {number}");
 number = default;
 Console.WriteLine($"Number has been reset to its default {number}");
 
-
+int n = 20;
+Console.WriteLine($"Number is {n}");
+n = default;
+Console.WriteLine($"Number has been reset {n}");
