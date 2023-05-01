@@ -8,9 +8,8 @@ namespace Bank
 {
     public interface IBankAccount
     {
-        bool Deposit(decimal amount); 
-        bool Withdraw(decimal  amount);    
+        bool Deposit(decimal ammount);
+        bool Withdraw(decimal amount);
         decimal Balance { get; }
-
     }
 }

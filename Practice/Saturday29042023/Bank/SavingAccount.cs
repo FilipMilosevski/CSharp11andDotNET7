@@ -6,45 +6,42 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
-
     public class SavingAccount : IBankAccount
     {
         private decimal _balance;
         private decimal _perDayLimit;
-        public decimal Balance => throw new NotImplementedException();
-
         public bool Deposit(decimal amount)
         {
             _balance += amount;
             return true;
         }
-
         public bool Withdraw(decimal amount)
         {
             if (_balance < amount)
             {
-                Console.WriteLine("Insuficent Balance!");
+                Console.WriteLine("Insufficient balance!");
                 return false;
             }
-         
-           else if (_perDayLimit + amount > 5000)
+            else if (_perDayLimit + amount > 5000)
             {
-                Console.WriteLine("Withdraw atempt failed!");
+                Console.WriteLine("Withdrawal attempt failed!");
                 return false;
             }
             else
             {
                 _balance = amount;
                 _perDayLimit += amount;
-                Console.WriteLine(String.Format("Successfully withdraw:{0,6:C}", amount));
-                return true;    
+                Console.WriteLine(String.Format("Successfully withdraw: {0,6:C}", amount));
+                return true;
             }
-       
-        
-        
-        
         }
-
-        
+        public decimal Balance
+        {
+            get { return _balance; }
+        }
+        public override string ToString()
+        {
+            return String.Format("Saving Account Balance = {0,6:C}", _balance); 
+        }
     }
 }

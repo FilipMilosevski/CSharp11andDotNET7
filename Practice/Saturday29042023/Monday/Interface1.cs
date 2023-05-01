@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
-namespace PeopleApp
+namespace Monday
 {
-    public interface IWork
+    public interface Interface1
     {
-        string working(string x);
-        public void recreation1();
-
+        void player1();
+    
     }
 }

@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PeopleApp
+namespace Monday
 {
-    public interface IWork
+    public interface Interface3
     {
-        string working(string x);
-        public void recreation1();
-
     }
 }

@@ -103,13 +103,10 @@ OutputPeopleNames(people, "After sorting using Person's IComparable implementati
 //player3.Play();
 //player3.Pause();
 
-
-
 List<IPlayable> MyPlayers = new List<IPlayable>();
 MyPlayers.Add(new DvdPlayer());
 MyPlayers.Add(new CdPlayer());
 MyPlayers.Add(new Filips());
-    
 foreach (IPlayable item in MyPlayers)
 {
     item.Play();
