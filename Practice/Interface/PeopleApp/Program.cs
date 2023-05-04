@@ -91,18 +91,18 @@ OutputPeopleNames(people, "Initial list of people:");
 Array.Sort(people);
 OutputPeopleNames(people, "After sorting using Person's IComparable implementation:");
 
-//IPlayable player1 = new DvdPlayer();
-//player1.Play();
-//player1.Pause();
+IPlayable player1 = new DvdPlayer();
+player1.Play();
+player1.Pause();
 
-//IPlayable player2 = new CdPlayer();
-//player2.Play();
-//player2.Pause();
+IPlayable player2 = new CdPlayer();
+player2.Play();
+player2.Pause();
 
-//IPlayable player3 = new Filips();
-//player3.Play();
-//player3.Pause();
-
+IPlayable player3 = new Filips();
+player3.Play();
+player3.Pause();
+WriteLine("---------------------------------------------");
 List<IPlayable> MyPlayers = new List<IPlayable>();
 MyPlayers.Add(new DvdPlayer());
 MyPlayers.Add(new CdPlayer());

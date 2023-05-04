@@ -6,15 +6,19 @@ using System.Threading.Tasks;
 
 namespace Monday
 {
-    public class Person : object, Interface1, Interface2, Interface3
+    public class Person : object, Interface1
     {
         public string? Fname { get; set; }
         public string? Lname { get; set; }
 
         public int ID { get; set; }
-        public void player1()
+        public void play()
         {
-            Console.WriteLine("THIS PERSON IS PLAYER 1");
+            Console.WriteLine("PERSON IS PLAY");
+        }
+        public void pause()
+        {
+            Console.WriteLine("PERSON IS PAUSE");
         }
 
 

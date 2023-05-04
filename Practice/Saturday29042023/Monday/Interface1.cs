@@ -9,7 +9,9 @@ namespace Monday
 {
     public interface Interface1
     {
-        void player1();
+        void play();
+        void pause();
+
     
     }
 }

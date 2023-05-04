@@ -34,6 +34,19 @@ Console.WriteLine("First Name: " + secondPerson.Fname);
 Console.WriteLine("Last Name: " + secondPerson.Lname);
 Console.WriteLine("ID: " + secondPerson.ID);
 
-newPerson.player1();
+Interface1 Fi = new Person();
+Fi.play();
+Fi.play();
+Fi.play();
 
+Console.WriteLine(".................");
+List<Interface1> MyPlayers = new List<Interface1>();
+MyPlayers.Add(new Person());
+MyPlayers.Add(new Student());
 
+foreach (Interface1 item in MyPlayers)
+{
+    
+    item.play();
+    item.pause();
+}
