@@ -8,10 +8,10 @@ namespace ParkingSystem.Vehicles
 {
     public class Bus : Vehicle
     {
-       public bool Toalet { get; set; }
-        public Bus(): base() { }
+        public bool Toalet { get; set; }
+        public Bus() : base() { }
 
-        public Bus(bool toalet, string model, int productionYear, Person owner, int weight, int width, string fuelType, int passengersNo) : base(model, productionYear, owner, weight, width, fuelType, passengersNo)
+        public Bus(bool toalet, string model, int productionYear, Person owner, int weight, int width, int fuelType, int passengersNo) : base(model, productionYear, owner, weight, width, fuelType, passengersNo)
         {
             Toalet = toalet;
         }

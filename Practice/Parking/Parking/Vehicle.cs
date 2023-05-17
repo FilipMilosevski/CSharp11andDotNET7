@@ -13,14 +13,14 @@ namespace ParkingSystem
         public Person Owner { get; set; }
         public int Weight { get; set; }
         public int Width { get; set; }
-        public string FuelType { get; set; }
+        public int FuelType { get; set; }
         public int PassengersNo { get; set; }
         public Vehicle()
         {
 
         }
 
-        public Vehicle(string model, int productionYear, Person owner, int weight, int width, string fuelType, int passengersNo)
+        public Vehicle(string model, int productionYear, Person owner, int weight, int width, int fuelType, int passengersNo)
         {
             Model = model;
             ProductionYear = productionYear;
@@ -30,14 +30,13 @@ namespace ParkingSystem
             FuelType = fuelType;
             PassengersNo = passengersNo;
         }
-
-        public int GetWidth()
+        public int getWidth()
         {
             return Width;
         }
-        public int GetWeight()
+        public int getWeight()
         {
-            { return Weight; }
+            return Weight;
         }
         public virtual int isEconomic()
         {
@@ -46,13 +45,10 @@ namespace ParkingSystem
                 return 1;
             }
             else
-            { 
+            {
                 return 0;
             }
         }
 
-
     }
-
-    
 }

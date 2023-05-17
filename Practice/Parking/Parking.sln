@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactList", "ContactList\ContactList.csproj", "{B67374F8-C234-4103-852E-91246EA979A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingSystem", "Parking\ParkingSystem.csproj", "{C37D28AF-3A04-46B1-9CD3-47FE6CA2A08B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B67374F8-C234-4103-852E-91246EA979A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B67374F8-C234-4103-852E-91246EA979A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B67374F8-C234-4103-852E-91246EA979A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B67374F8-C234-4103-852E-91246EA979A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C37D28AF-3A04-46B1-9CD3-47FE6CA2A08B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C37D28AF-3A04-46B1-9CD3-47FE6CA2A08B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C37D28AF-3A04-46B1-9CD3-47FE6CA2A08B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C37D28AF-3A04-46B1-9CD3-47FE6CA2A08B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {822636AE-4C71-45D3-8454-14FE76D3380C}
+		SolutionGuid = {A6A5E571-EDF0-40A5-9A83-8860B3830693}
 	EndGlobalSection
 EndGlobal

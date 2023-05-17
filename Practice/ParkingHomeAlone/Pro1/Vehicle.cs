@@ -4,23 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ParkingSystem
+namespace Pro1
 {
     public class Vehicle
     {
+        
+
         public string Model { get; set; }
         public int ProductionYear { get; set; }
         public Person Owner { get; set; }
         public int Weight { get; set; }
         public int Width { get; set; }
-        public string FuelType { get; set; }
-        public int PassengersNo { get; set; }
-        public Vehicle()
-        {
+        public int FuelType { get; set; }
+        public int PassengerNo { get; set; }
+        public Vehicle() { }
 
-        }
-
-        public Vehicle(string model, int productionYear, Person owner, int weight, int width, string fuelType, int passengersNo)
+        public Vehicle(string model, int productionYear, Person owner, int weight, int width, int fuelType, int passengerNo)
         {
             Model = model;
             ProductionYear = productionYear;
@@ -28,16 +27,15 @@ namespace ParkingSystem
             Weight = weight;
             Width = width;
             FuelType = fuelType;
-            PassengersNo = passengersNo;
+            PassengerNo = passengerNo;
         }
-
-        public int GetWidth()
+        public int getWidth()
         {
             return Width;
         }
-        public int GetWeight()
+        public int getWeight()
         {
-            { return Weight; }
+            return Weight;
         }
         public virtual int isEconomic()
         {
@@ -46,13 +44,13 @@ namespace ParkingSystem
                 return 1;
             }
             else
-            { 
+            {
                 return 0;
             }
         }
-
-
     }
 
+   
     
+
 }

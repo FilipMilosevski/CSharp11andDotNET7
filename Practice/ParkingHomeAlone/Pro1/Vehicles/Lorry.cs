@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ParkingSystem.Vehicles
+namespace Pro1.Vehicles
 {
     public class Lorry : Vehicle
     {
         public int Capacity { get; set; }
         public Lorry() : base() { }
 
-        public Lorry(int capacity, string model, int productionYear, Person owner, int weight, int width, string fuelType, int passengersNo) : base(model, productionYear, owner, weight, width, fuelType, passengersNo)
+        public Lorry(int capacity, string model, int productionYear, Person owner, int weight, int width, int fuelType, int passengerNo) : base(model, productionYear, owner, weight, width, fuelType, passengerNo)
         {
+            Capacity = capacity;
         }
         public override int isEconomic()
         {

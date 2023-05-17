@@ -11,8 +11,9 @@ namespace ParkingSystem.Vehicles
         public int Capacity { get; set; }
         public Lorry() : base() { }
 
-        public Lorry(int capacity, string model, int productionYear, Person owner, int weight, int width, string fuelType, int passengersNo) : base(model, productionYear, owner, weight, width, fuelType, passengersNo)
+        public Lorry(int capacity, string model, int productionYear, Person owner, int weight, int width, int fuelType, int passengersNo) : base(model, productionYear, owner, weight, width, fuelType, passengersNo)
         {
+            Capacity = capacity;
         }
         public override int isEconomic()
         {

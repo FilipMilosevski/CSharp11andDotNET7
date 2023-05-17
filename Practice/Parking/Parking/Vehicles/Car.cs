@@ -11,9 +11,9 @@ namespace ParkingSystem.Vehicles
         public string TypeCar { get; set; }
         public Car() : base() { }
 
-        public Car(string typeCar, string model, int productionYear, Person owner, int weight, int width, string fuelType, int passengersNo) : base(model, productionYear, owner, weight, width, fuelType, passengersNo)
+        public Car(string typeCar, string model, int productionYear, Person owner, int weight, int width, int fuelType, int passengersNo) : base(model, productionYear, owner, weight, width, fuelType, passengersNo)
         {
-            TypeCar = TypeCar;
+            TypeCar = typeCar;
         }
         public override int isEconomic()
         {
