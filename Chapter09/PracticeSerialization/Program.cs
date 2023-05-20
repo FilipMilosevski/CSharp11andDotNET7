@@ -6,6 +6,15 @@ using static System.Console;
 using Newtonsoft.Json;
 
 
+static void SectionTitle(string title)
+{
+    ConsoleColor previousColor = ForegroundColor;
+    ForegroundColor = ConsoleColor.Yellow;
+    WriteLine("*");
+    WriteLine($"*{title}");
+    WriteLine("*");
+    ForegroundColor = previousColor;
+}
 
 List<Person1> people = new List<Person1>()
 {
@@ -56,62 +65,36 @@ List<Person1> people = new List<Person1>()
     }
 };
 
-XmlSerializer xs = new XmlSerializer(typeof(List<Person1>));
-string path = Path.Combine(Environment.CurrentDirectory, "people.xml");
-using (FileStream stream = File.Create(path))
-{
-    xs.Serialize(stream, people);
-}
-WriteLine("Serializing XML");
-WriteLine(new FileInfo(path).Length);
-WriteLine(path);
-WriteLine("Written {0:N0} words in {1}", new FileInfo(path).Length, path);
-WriteLine("==========================================");
 
-string[] lines = File.ReadAllLines(path);
-foreach (string line in lines)
-{
-    WriteLine(line);
-}
-WriteLine("===========================================");
+SectionTitle("Serialiizing JSON");
+SectionTitle("==============================");
 
-WriteLine("Deserialization of XML");
-using (FileStream xmlLoad = File.Open(path, FileMode.Open))
-{
-    List<Person1>? loadedPeople = xs.Deserialize(xmlLoad) as List<Person1>;
-    if(loadedPeople != null)
-    {
-        foreach (Person1 person in loadedPeople)
-        {
-            WriteLine($"{person.LastName} has {person.Children.Count} children");
-        }
-    }
-}
-WriteLine("==========================================");
-
-
-WriteLine("Serializing JSON");
 string pathJson = Combine(CurrentDirectory, "people.json");
 using (StreamWriter streamJson = File.CreateText(pathJson))
 {
     JsonSerializer jss = new JsonSerializer();
     string json = JsonConvert.SerializeObject(people, Formatting.Indented);
     streamJson.Write(json);
-}
+    //jss.Serialize(streamJson, people);
+};
 WriteLine(new FileInfo(pathJson).Length);
 WriteLine(pathJson);
-WriteLine("Written {0:N0} words in {1}", new FileInfo(pathJson).Length, pathJson);
-WriteLine("======================================");
-WriteLine(File.ReadAllText(pathJson));
-WriteLine("====================================");
-WriteLine("Deserializing JSON files");
+WriteLine("Written {0:N0} in {1}", new FileInfo(pathJson).Length, pathJson);
+SectionTitle("---------------------------------------------------");
+WriteLine(File.ReadAllText(pathJson)+"   SEE");
+SectionTitle("==============================");
+
+SectionTitle("Deserialiizing JSON files");
 string jsonText = File.ReadAllText(pathJson);
-List<Person1> jsonPeople = JsonConvert.DeserializeObject<List<Person1>>(jsonText);
-if(jsonPeople != null)
+List<Person1>? jsonPeople = JsonConvert.DeserializeObject<List<Person1>>(jsonText);
+if (jsonPeople != null)
 {
     foreach (Person1 person in jsonPeople)
     {
         int childrenCount = person.Children != null ? person.Children.Count : 0;
-        WriteLine($"{person.FirstName} has {childrenCount} children");  
+        WriteLine($"{person.FirstName} has {childrenCount} children");
     }
 }
+
+
+
