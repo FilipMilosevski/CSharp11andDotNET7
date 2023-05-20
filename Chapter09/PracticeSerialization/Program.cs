@@ -11,7 +11,7 @@ static void SectionTitle(string title)
     ConsoleColor previousColor = ForegroundColor;
     ForegroundColor = ConsoleColor.Yellow;
     WriteLine("*");
-    WriteLine($"*{title}");
+    WriteLine($"{title}");
     WriteLine("*");
     ForegroundColor = previousColor;
 }
@@ -66,8 +66,7 @@ List<Person1> people = new List<Person1>()
 };
 
 
-SectionTitle("Serialiizing JSON");
-SectionTitle("==============================");
+SectionTitle("SERIALIZING JSON \n=============================");
 
 string pathJson = Combine(CurrentDirectory, "people.json");
 using (StreamWriter streamJson = File.CreateText(pathJson))
@@ -75,26 +74,24 @@ using (StreamWriter streamJson = File.CreateText(pathJson))
     JsonSerializer jss = new JsonSerializer();
     string json = JsonConvert.SerializeObject(people, Formatting.Indented);
     streamJson.Write(json);
-    //jss.Serialize(streamJson, people);
-};
+}
 WriteLine(new FileInfo(pathJson).Length);
 WriteLine(pathJson);
-WriteLine("Written {0:N0} in {1}", new FileInfo(pathJson).Length, pathJson);
-SectionTitle("---------------------------------------------------");
-WriteLine(File.ReadAllText(pathJson)+"   SEE");
-SectionTitle("==============================");
+WriteLine("Written {0:N0} words in {1}", new FileInfo(pathJson).Length, pathJson);
 
-SectionTitle("Deserialiizing JSON files");
+
 string jsonText = File.ReadAllText(pathJson);
+WriteLine(jsonText);
+
+SectionTitle("====================== \n DESERIALIZING JSON \n====================");
+
+
 List<Person1>? jsonPeople = JsonConvert.DeserializeObject<List<Person1>>(jsonText);
 if (jsonPeople != null)
 {
-    foreach (Person1 person in jsonPeople)
+    foreach(Person1 person in jsonPeople)
     {
-        int childrenCount = person.Children != null ? person.Children.Count : 0;
-        WriteLine($"{person.FirstName} has {childrenCount} children");
+        int childCount = person.Children != null ? person.Children.Count : 0;
+        WriteLine($"{person.FirstName} has {childCount} kids");
     }
 }
-
-
-
