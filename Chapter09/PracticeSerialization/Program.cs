@@ -66,6 +66,7 @@ List<Person1> people = new List<Person1>()
 };
 
 
+
 SectionTitle("SERIALIZING JSON \n=============================");
 
 string pathJson = Combine(CurrentDirectory, "people.json");

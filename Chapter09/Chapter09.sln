@@ -15,7 +15,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saturday", "Saturday\Saturd
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithSerialization", "WorkingWithSerialization\WorkingWithSerialization.csproj", "{FEA46B0A-7B5A-4411-8E34-8514A105E341}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeSerialization", "PracticeSerialization\PracticeSerialization.csproj", "{DCD489BE-9405-4822-99EF-094C9E92DFEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticeSerialization", "PracticeSerialization\PracticeSerialization.csproj", "{DCD489BE-9405-4822-99EF-094C9E92DFEF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaturdaySerializationXml", "SaturdaySerialization\SaturdaySerializationXml.csproj", "{BE75F23D-B05F-4673-B5E9-222507FC2D58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaturdaySerializationJson", "SaturdaySerializationJson\SaturdaySerializationJson.csproj", "{19A87CEC-787F-433C-9368-BE6C315DC608}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaturdaySerializationNewtonsoft", "fff\SaturdaySerializationNewtonsoft.csproj", "{07198C96-296C-4FA5-A8FF-E983149A25FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +57,18 @@ Global
 		{DCD489BE-9405-4822-99EF-094C9E92DFEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCD489BE-9405-4822-99EF-094C9E92DFEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCD489BE-9405-4822-99EF-094C9E92DFEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE75F23D-B05F-4673-B5E9-222507FC2D58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE75F23D-B05F-4673-B5E9-222507FC2D58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE75F23D-B05F-4673-B5E9-222507FC2D58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE75F23D-B05F-4673-B5E9-222507FC2D58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19A87CEC-787F-433C-9368-BE6C315DC608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19A87CEC-787F-433C-9368-BE6C315DC608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19A87CEC-787F-433C-9368-BE6C315DC608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19A87CEC-787F-433C-9368-BE6C315DC608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07198C96-296C-4FA5-A8FF-E983149A25FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07198C96-296C-4FA5-A8FF-E983149A25FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07198C96-296C-4FA5-A8FF-E983149A25FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07198C96-296C-4FA5-A8FF-E983149A25FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
