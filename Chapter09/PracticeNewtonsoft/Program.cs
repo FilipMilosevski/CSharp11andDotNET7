@@ -105,11 +105,56 @@ List<Employee> One = new List<Employee>()
 string json = JsonConvert.SerializeObject(One,Formatting.Indented);
 WriteLine(json);
 File.WriteAllText(@"C:\CSharp11andDotNET7\Chapter09\PracticeNewtonsoft\bin\Debug\net7.0\filip.json", json);
+
 using (StreamWriter file = File.CreateText(@"C:\CSharp11andDotNET7\Chapter09\PracticeNewtonsoft\bin\Debug\net7.0\filip.json"))
 {
     JsonSerializer jss = new JsonSerializer();
     jss.Serialize(file, One);
-
+    file.Write(jss);
 }
 
+List<Employee> one = JsonConvert.DeserializeObject<List<Employee>>(json);
+
 SectionTitle("IMINJA NA PROFESORI");
+
+
+if(one != null)
+{
+    foreach (Employee fn in one)
+    {
+        WriteLine(fn.Name);
+    }
+}
+
+SectionTitle("KOLKU ASISTENTI IMA POD NEGO");
+
+if(one != null)
+{
+   
+    
+        foreach (Employee person in one)
+        {
+            int kc = person.klas !=null ? person.klas.Count : 0;
+            WriteLine($"{person.Name} has {kc} as asistant");
+        }
+    
+}
+
+
+SectionTitle("IMINJA NA ASISTENTI");
+
+if(one != null)
+{
+    foreach (Employee person in one)
+    {
+        int kc = person.klas != null ? person.klas.Count : 0;
+        WriteLine($"{person.Name} has {kc} as assistant");
+        if (person.klas !=null)
+        {
+            foreach (Employee kid in person.klas)
+            {
+                WriteLine($"{person.Name.PadLeft(30)} has {kid.Name} as assistant");
+            }
+        }
+    }
+}
