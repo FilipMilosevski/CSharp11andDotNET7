@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 using NewtonsoftCars;
+using System.Diagnostics;
+using System.Security.Cryptography.X509Certificates;
 using static System.Console;
 
 
@@ -155,3 +157,56 @@ List<Cars> One = new List<Cars>()
         }
     }
 };
+
+SectionTitle("Serializing JSON");
+
+string json = JsonConvert.SerializeObject(One, Formatting.Indented);
+WriteLine(json);
+File.WriteAllText(@"\CSharp11andDotNET7\Chapter09\NewtonsoftCars\bin\Debug\net7.0\cars.json", json);
+
+using (StreamWriter file = File.CreateText(@"\CSharp11andDotNET7\Chapter09\NewtonsoftCars\bin\Debug\net7.0\cars.json"))
+{
+    JsonSerializer jss = new JsonSerializer();
+    jss.Serialize(file, One);
+}
+
+SectionTitle("IMINJA NA OSNOVACKI MARKI");
+List<Cars> here = JsonConvert.DeserializeObject<List<Cars>>(json);
+if (here != null)
+{
+    foreach (Cars car in here)
+    {
+        WriteLine(car.make);
+    }
+}
+
+SectionTitle("KOLKU BRENDOVI IMAAT POD NIV");
+
+if (here != null)
+{
+    foreach (Cars future in here)
+    {
+        int childCount = future.klas != null ? future.klas.Count : 0;
+        WriteLine($"{future.make} has own the {childCount}");
+    }
+}
+
+SectionTitle("IMINJA NA BRENDOVITE POD NIV");
+if (here != null)
+{
+    foreach(Cars future in here)
+    {
+        int childCount = future.klas != null ? future.klas.Count : 0;
+        WriteLine($"{future.make} has own the {childCount}");   
+        if (future.klas != null)
+        {
+            foreach (Cars child in future.klas)
+            {
+                WriteLine($"{future.make.PadLeft(30)} has  owning the {child.make} ");
+            }
+            
+                
+            
+        }
+    }
+}
