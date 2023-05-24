@@ -86,3 +86,41 @@ if (jsonPeople != null)
         WriteLine($"{person.FirstName} has {childrenCount} children");
     }
 }
+WriteLine("");
+WriteLine("======================");
+WriteLine("Serializing JSON");
+WriteLine("======================");
+WriteLine("");
+
+
+string pathJson1 = Combine(CurrentDirectory, "pro.json");
+using (StreamWriter streamJson = File.CreateText(pathJson1))
+{
+    JsonSerializer jss = new JsonSerializer();
+    string json = JsonConvert.SerializeObject(people, Formatting.Indented);
+    streamJson.Write(json);
+}
+
+WriteLine("Written {0:N0} in {1}", new FileInfo (pathJson1).Length, pathJson1);
+WriteLine(new FileInfo(pathJson1).Length);
+WriteLine(pathJson1);
+WriteLine(File.ReadAllText(pathJson1));// da go ja pokaze listata JSON
+
+WriteLine("");
+WriteLine("======================");
+WriteLine("Deserializing JSON");
+WriteLine("======================");
+WriteLine("");
+
+
+string jsonText1 = File.ReadAllText(pathJson1);
+List<Person>? jsonPeople1 = JsonConvert.DeserializeObject<List<Person>>(jsonText1);
+if(jsonPeople1 != null)
+{
+    foreach (Person p in jsonPeople1)
+    {
+        int kidsCount = p.Children != null ? p.Children.Count : 0;
+        WriteLine($"{p.FirstName} has {kidsCount} as friend");
+    }
+
+}
