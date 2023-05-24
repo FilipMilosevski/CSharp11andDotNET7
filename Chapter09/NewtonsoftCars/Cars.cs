@@ -14,8 +14,10 @@ namespace NewtonsoftCars
         public int ? year { get;set; }
         public string ? fuelType { get;set; }
 
-        public List<Cars>? country { get; set; }
+        public List<Cars>? klas { get; set; }
 
+        public string ? country { get; set; }
+        public Cars() { }
 
 
     }
