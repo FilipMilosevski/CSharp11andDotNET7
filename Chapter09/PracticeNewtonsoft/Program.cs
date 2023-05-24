@@ -102,58 +102,54 @@ List<Employee> One = new List<Employee>()
 //}
 
 
-string json = JsonConvert.SerializeObject(One,Formatting.Indented);
+string json = JsonConvert.SerializeObject(One, Formatting.Indented);
 WriteLine(json);
 File.WriteAllText(@"C:\CSharp11andDotNET7\Chapter09\PracticeNewtonsoft\bin\Debug\net7.0\filip.json", json);
+
 
 using (StreamWriter file = File.CreateText(@"C:\CSharp11andDotNET7\Chapter09\PracticeNewtonsoft\bin\Debug\net7.0\filip.json"))
 {
     JsonSerializer jss = new JsonSerializer();
     jss.Serialize(file, One);
-    file.Write(jss);
 }
-
-List<Employee> one = JsonConvert.DeserializeObject<List<Employee>>(json);
 
 SectionTitle("IMINJA NA PROFESORI");
 
 
+List<Employee> one = JsonConvert.DeserializeObject<List<Employee>>(json);
 if(one != null)
 {
-    foreach (Employee fn in one)
+    foreach (Employee aa in one)
     {
-        WriteLine(fn.Name);
+        WriteLine(aa.Name+" is professor");
     }
 }
 
-SectionTitle("KOLKU ASISTENTI IMA POD NEGO");
 
-if(one != null)
-{
-   
-    
-        foreach (Employee person in one)
-        {
-            int kc = person.klas !=null ? person.klas.Count : 0;
-            WriteLine($"{person.Name} has {kc} as asistant");
-        }
-    
-}
+SectionTitle("KOLKU ASISTENTI IMA");
 
-
-SectionTitle("IMINJA NA ASISTENTI");
 
 if(one != null)
 {
     foreach (Employee person in one)
     {
-        int kc = person.klas != null ? person.klas.Count : 0;
-        WriteLine($"{person.Name} has {kc} as assistant");
-        if (person.klas !=null)
+        int childCount = person.klas != null ? person.klas.Count : 0;
+        WriteLine($"{person.Name} has {childCount}  assistant");
+
+    }
+}
+
+if (one != null)
+{
+    foreach(Employee person in one)
+    {
+        int childCount = person.klas != null ? person.klas.Count : 0;
+        WriteLine($"{person.Name} has {childCount} assistant");
+        if (person.klas != null)
         {
-            foreach (Employee kid in person.klas)
+            foreach (Employee child in person.klas)
             {
-                WriteLine($"{person.Name.PadLeft(30)} has {kid.Name} as assistant");
+                WriteLine($"{person.Name.PadLeft(30)} has {child.Name} as assistant");
             }
         }
     }

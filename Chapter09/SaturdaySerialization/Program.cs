@@ -41,24 +41,49 @@ List<Employee> One = new List<Employee>()
     } }
 
 };
-XmlSerializer serializer = new XmlSerializer(typeof(List<Employee>));
+//XmlSerializer serializer = new XmlSerializer(typeof(List<Employee>));
 
-using (TextWriter writer = new StreamWriter(@"people.xml"))
+//using (TextWriter writer = new StreamWriter(@"people.xml"))
+//{
+//    serializer.Serialize(writer, One);
+//}
+//using (FileStream fileStream = new FileStream(@"people.xml", FileMode.Open))
+//{
+//    List<Employee>? emp = serializer.Deserialize(fileStream) as List<Employee>;
+
+//    if (emp != null)
+//    {
+//        foreach (Employee employee in emp)
+//        {
+//            var under = employee.Suordinared;
+//            foreach (Employee employee1 in under)
+//            {
+//                Console.WriteLine($"{employee.Name} has under  {employee1.Name} employee");
+//            }
+//        }
+//    }
+//}
+
+
+XmlSerializer xs = new XmlSerializer(typeof(List<Employee>));
+
+using(TextWriter writer = new StreamWriter("ppp.xml"))
 {
-    serializer.Serialize(writer, One);
+    xs.Serialize(writer, One);
 }
-using (FileStream fileStream = new FileStream(@"people.xml", FileMode.Open))
+
+using (FileStream fs = new FileStream("ppp.xml", FileMode.Open))
 {
-    List<Employee>? emp = serializer.Deserialize(fileStream) as List<Employee>;
+    List<Employee>? emp = xs.Deserialize(fs) as List<Employee>;
 
     if (emp != null)
     {
-        foreach (Employee employee in emp)
+        foreach (Employee ee in emp)
         {
-            var under = employee.Suordinared;
+            var under = ee.Suordinared;
             foreach (Employee employee1 in under)
             {
-                Console.WriteLine($"{employee.Name} has under  {employee1.Name} employee");
+                Console.WriteLine($"{ee.Name} has under {employee1.Name}");
             }
         }
     }
