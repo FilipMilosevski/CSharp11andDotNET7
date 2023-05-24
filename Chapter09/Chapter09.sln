@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaturdaySerializationJson",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaturdaySerializationNewtonsoft", "fff\SaturdaySerializationNewtonsoft.csproj", "{07198C96-296C-4FA5-A8FF-E983149A25FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeNewtonsoft", "PracticeNewtonsoft\PracticeNewtonsoft.csproj", "{F55FBE2A-ECCE-4E1B-B963-63B9371FC62E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticeNewtonsoft", "PracticeNewtonsoft\PracticeNewtonsoft.csproj", "{F55FBE2A-ECCE-4E1B-B963-63B9371FC62E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewtonsoftCars", "NewtonsoftCars\NewtonsoftCars.csproj", "{F183F7FC-7D3E-4B06-9CC0-E32FD0507419}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{F55FBE2A-ECCE-4E1B-B963-63B9371FC62E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F55FBE2A-ECCE-4E1B-B963-63B9371FC62E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F55FBE2A-ECCE-4E1B-B963-63B9371FC62E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F183F7FC-7D3E-4B06-9CC0-E32FD0507419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F183F7FC-7D3E-4B06-9CC0-E32FD0507419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F183F7FC-7D3E-4B06-9CC0-E32FD0507419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F183F7FC-7D3E-4B06-9CC0-E32FD0507419}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
