@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CompanyApp.RegistrationPage"
+             Title="RegistrationPage">
+    <VerticalStackLayout>
+        <Entry Placeholder="Insert name">
+        </Entry>
+        <Entry Placeholder="Insert surname">
+        </Entry>
+        <Entry Placeholder="Insert phone">
+        </Entry>
+        <Entry Placeholder="Insert username">
+        </Entry>
+        <Entry Placeholder="Insert workposition">
+        </Entry>
+        <Entry Placeholder="Insert password" IsPassword="True">
+        </Entry>
+        <Button Clicked="Button_Clicked" Text="SUBMIT"></Button>
+    </VerticalStackLayout>
+</ContentPage>
