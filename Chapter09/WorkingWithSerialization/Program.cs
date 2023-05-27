@@ -11,13 +11,49 @@ List<Person> people = new List<Person>()
     {
         FirstName = "Alice",
         LastName="Smith",
-        DateOfBirth = new DateTime(2002,3,3)
+        DateOfBirth = new DateTime(2002,3,3),
+        Children = new HashSet<Person>()
+        {
+             new Person(0M)
+             {
+                FirstName = "Sally",
+                LastName="Cox",
+                DateOfBirth = new DateTime(2012,2,13)
+             },
+             new Person(0M)
+             {
+                FirstName = "Norrie",
+                LastName="Cox",
+                DateOfBirth = new DateTime(2012,2,13)
+             }
+        }
     },
      new Person(40000M)
     {
         FirstName = "Bob",
         LastName="Jones",
-        DateOfBirth = new DateTime(1969,1,13)
+        DateOfBirth = new DateTime(1969,1,13),
+        Children = new HashSet<Person>()
+        {
+             new Person(0M)
+             {
+                FirstName = "Jim",
+                LastName="Cox",
+                DateOfBirth = new DateTime(2012,2,13)
+             },
+             new Person(0M)
+             {
+                FirstName = "James",
+                LastName="Cox",
+                DateOfBirth = new DateTime(2012,2,13)
+             },
+             new Person(0M)
+             {
+                FirstName = "Margaret",
+                LastName="Cox",
+                DateOfBirth = new DateTime(2012,2,13)
+             }
+        }
     },
       new Person(20000M)
     {
@@ -28,7 +64,7 @@ List<Person> people = new List<Person>()
         {
              new Person(0M)
              {
-                FirstName = "Sally",
+                FirstName = "Joe",
                 LastName="Cox",
                 DateOfBirth = new DateTime(2012,2,13)
              }
@@ -123,4 +159,47 @@ if(jsonPeople1 != null)
         WriteLine($"{p.FirstName} has {kidsCount} as friend");
     }
 
+}
+
+
+WriteLine("");
+WriteLine("");
+WriteLine("");
+
+
+WriteLine("NEW SATURDAY PRACTICE");
+
+
+string pathJson2 = Combine(CurrentDirectory, "sat.json");
+using (StreamWriter streamJsonNew = File.CreateText(pathJson2))
+{
+    JsonSerializer jss = new JsonSerializer();
+    string json = JsonConvert.SerializeObject(people, Formatting.Indented);
+    streamJsonNew.Write(json);
+}
+
+WriteLine("Written {0:N0} words in {1}", new FileInfo(pathJson2).Length, pathJson2);
+WriteLine(new FileInfo(pathJson2).Length);
+WriteLine(pathJson2);
+
+
+string jsonText2 = File.ReadAllText(pathJson2);
+
+List<Person>? peopleList = JsonConvert.DeserializeObject<List<Person>>(jsonText2);
+
+if(peopleList != null)
+{
+    foreach (Person com in peopleList)
+    {
+        int kidCount = com.Children != null ? com.Children.Count : 0;
+        WriteLine($"{com.FirstName.PadLeft(10)} has {kidCount} children");
+        if (com.Children != null)
+        {
+            foreach (Person und in com.Children )
+            {
+                WriteLine($"{und.FirstName} is {com.FirstName}'s child");
+
+            }
+        }
+    }
 }

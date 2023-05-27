@@ -242,7 +242,10 @@ List<Company> companies = new List<Company>()
 //        {
 //            foreach (Company emp in com.klas)
 //            {
+//                //WriteLine($"{emp.firstName.PadLeft(30)} ");        
 //                WriteLine($"{com.firstName.PadLeft(30)} is the {com.position}'S on {emp.firstName}");
+//                WriteLine($"{com.firstName.PadLeft(30)} is the {com.position}'S on {emp.firstName}");
+
 //            }
 //        }
 
@@ -256,7 +259,7 @@ WriteLine(json);
 
 File.WriteAllText(@"C:\CSharp11andDotNET7\Chapter09\Newtonsoft Company\bin\Debug\net7.0\companies.json", json);
 
-using (StreamWriter file = File.CreateText(@"C:\CSharp11andDotNET7\Chapter09\Newtonsoft Company\bin\Debug\net7.0\companies.json"))
+using(StreamWriter file = File.CreateText(@"C:\CSharp11andDotNET7\Chapter09\Newtonsoft Company\bin\Debug\net7.0\companies.json"))
 {
     JsonSerializer jss = new JsonSerializer();
     jss.Serialize(file, companies);
@@ -264,7 +267,7 @@ using (StreamWriter file = File.CreateText(@"C:\CSharp11andDotNET7\Chapter09\New
 
 List<Company> companyList = JsonConvert.DeserializeObject<List<Company>>(json);
 
-SectionTitle("IMINJA NA CEO");
+SectionTitle("IMINJA NA CEO'S");
 
 if (companyList != null)
 {
@@ -275,38 +278,32 @@ if (companyList != null)
 }
 
 
-SectionTitle("KOLKU VRABOTENI IMAAT POD NIV");
+SectionTitle("KOLKU VRABOTENI IMAAT");
 
 if (companyList != null)
 {
     foreach (Company com in companyList)
     {
-        int kidCount = com.klas != null ? com.klas.Count : 0;
-        WriteLine($"{com.firstName} has {kidCount} as assosiates.");
+        if (com != null)
+        {
+            int kidCount = com.klas != null ? com.klas.Count : 0;
+            WriteLine($"{com.firstName} {com.lastName} has {kidCount} assosiates in {com.companyName}");
+        }            
     }
 }
-
-
-SectionTitle("BROJ I IMINJA NA VRABOTENITE");
-
-
+SectionTitle("IMINJA I BROJ NA VRABOTENI");
 if (companyList != null)
 {
     foreach (Company com in companyList)
     {
-        int kidcount = com.klas != null ? com.klas.Count : 0;
-        WriteLine($"{com.firstName} has {kidcount} as assosiates.");
-        if (com.klas != null)
+        if(com != null)
         {
+            int kidCount = com.klas != null ? com.klas.Count : 0;
+            WriteLine($"{com.firstName} {com.lastName} has {kidCount} assosiates in {com.companyName}");
             foreach (Company emp in com.klas)
             {
-                //WriteLine($"{emp.firstName.PadLeft(30)} ");
                 WriteLine($"{com.firstName.PadLeft(30)} is the {com.position}'S on {emp.firstName}");
-
             }
         }
-
-
-
     }
-};
+}
