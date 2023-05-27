@@ -7,18 +7,24 @@
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = this;
         }
-
-        private void OnCounterClicked(object sender, EventArgs e)
+        public List<Test> customList { get; set; } = new List<Test>()
         {
-            count++;
+            new() { MyProperty = "Item1" }, new() { MyProperty = "Item2" }, new() { MyProperty = "Item3" }
+        };
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RegistrationPage());
         }
+
+
+
+        public class Test
+        {
+            public string MyProperty { get; set; }
+        }
+
     }
 }
