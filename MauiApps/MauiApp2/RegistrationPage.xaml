@@ -19,6 +19,8 @@
         </Entry>
         <Button Clicked="Button_Clicked" Text="SUBMIT"></Button>
         <Label Text="All rights reserved."/>
+        <Label Text="2023"/>
+        <Label Text="Skopje"/>
     </VerticalStackLayout>
 
 
