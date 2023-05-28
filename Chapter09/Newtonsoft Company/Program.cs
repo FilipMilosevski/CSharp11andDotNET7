@@ -254,8 +254,70 @@ List<Company> companies = new List<Company>()
 
 //}
 
+
+
+
+
+
+//string json = JsonConvert.SerializeObject(companies, Formatting.Indented);
+//WriteLine(json);
+
+//File.WriteAllText(@"C:\CSharp11andDotNET7\Chapter09\Newtonsoft Company\bin\Debug\net7.0\companies.json", json);
+
+//using(StreamWriter file = File.CreateText(@"C:\CSharp11andDotNET7\Chapter09\Newtonsoft Company\bin\Debug\net7.0\companies.json"))
+//{
+//    JsonSerializer jss = new JsonSerializer();
+//    jss.Serialize(file, companies);
+//}
+
+//List<Company> companyList = JsonConvert.DeserializeObject<List<Company>>(json);
+
+//SectionTitle("IMINJA NA CEO'S");
+
+//if (companyList != null)
+//{
+//    foreach (Company com in companyList)
+//    {
+//        WriteLine($"{com.firstName} is the {com.position} of {com.companyName}");
+//    }
+//}
+
+
+//SectionTitle("KOLKU VRABOTENI IMAAT");
+
+//if (companyList != null)
+//{
+//    foreach (Company com in companyList)
+//    {
+//        if (com != null)
+//        {
+//            int kidCount = com.klas != null ? com.klas.Count : 0;
+//            WriteLine($"{com.firstName} {com.lastName} has {kidCount} assosiates in {com.companyName}");
+//        }            
+//    }
+//}
+//SectionTitle("IMINJA I BROJ NA VRABOTENI");
+//if (companyList != null)
+//{
+//    foreach (Company com in companyList)
+//    {
+//        if(com != null)
+//        {
+//            int kidCount = com.klas != null ? com.klas.Count : 0;
+//            WriteLine($"{com.firstName} {com.lastName} has {kidCount} assosiates in {com.companyName}");
+//            foreach (Company emp in com.klas)
+//            {
+//                WriteLine($"{com.firstName.PadLeft(30)} is the {com.position}'S on {emp.firstName}");
+//            }
+//        }
+//    }
+//}
+
+
 string json = JsonConvert.SerializeObject(companies, Formatting.Indented);
+
 WriteLine(json);
+
 
 File.WriteAllText(@"C:\CSharp11andDotNET7\Chapter09\Newtonsoft Company\bin\Debug\net7.0\companies.json", json);
 
@@ -267,9 +329,10 @@ using(StreamWriter file = File.CreateText(@"C:\CSharp11andDotNET7\Chapter09\Newt
 
 List<Company> companyList = JsonConvert.DeserializeObject<List<Company>>(json);
 
-SectionTitle("IMINJA NA CEO'S");
+SectionTitle("IMINJA NA CEO");
 
-if (companyList != null)
+
+if(companyList != null)
 {
     foreach (Company com in companyList)
     {
@@ -278,7 +341,8 @@ if (companyList != null)
 }
 
 
-SectionTitle("KOLKU VRABOTENI IMAAT");
+SectionTitle("BROJ NA VRABOTENI              ");
+
 
 if (companyList != null)
 {
@@ -286,23 +350,27 @@ if (companyList != null)
     {
         if (com != null)
         {
-            int kidCount = com.klas != null ? com.klas.Count : 0;
-            WriteLine($"{com.firstName} {com.lastName} has {kidCount} assosiates in {com.companyName}");
-        }            
+            int employeeCount = com.klas != null ? com.klas.Count : 0;
+            WriteLine($"{com.firstName} at {com.companyName} has {employeeCount} employees");
+        }
+        
+            
+        
     }
 }
-SectionTitle("IMINJA I BROJ NA VRABOTENI");
-if (companyList != null)
+SectionTitle("BROJ I IMINJA NA VRABOTENI");
+
+if(companyList != null)
 {
     foreach (Company com in companyList)
     {
         if(com != null)
         {
-            int kidCount = com.klas != null ? com.klas.Count : 0;
-            WriteLine($"{com.firstName} {com.lastName} has {kidCount} assosiates in {com.companyName}");
+            int employeeCount = com.klas != null ? com.klas.Count : 0;
+            WriteLine($"{com.firstName} at {com.companyName} has {employeeCount} employees");
             foreach (Company emp in com.klas)
             {
-                WriteLine($"{com.firstName.PadLeft(30)} is the {com.position}'S on {emp.firstName}");
+                WriteLine($"{emp.firstName.PadLeft(30)} is working at {com.companyName}");
             }
         }
     }

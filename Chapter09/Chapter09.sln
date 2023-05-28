@@ -21,13 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaturdaySerializationXml", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaturdaySerializationJson", "SaturdaySerializationJson\SaturdaySerializationJson.csproj", "{19A87CEC-787F-433C-9368-BE6C315DC608}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaturdaySerializationNewtonsoft", "fff\SaturdaySerializationNewtonsoft.csproj", "{07198C96-296C-4FA5-A8FF-E983149A25FB}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticeNewtonsoft", "PracticeNewtonsoft\PracticeNewtonsoft.csproj", "{F55FBE2A-ECCE-4E1B-B963-63B9371FC62E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewtonsoftCars", "NewtonsoftCars\NewtonsoftCars.csproj", "{F183F7FC-7D3E-4B06-9CC0-E32FD0507419}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewtonsoftCompany", "Newtonsoft Company\NewtonsoftCompany.csproj", "{6E9E1BD5-B062-45E2-955E-35E6FA2C0C83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewtonsoftCompany", "Newtonsoft Company\NewtonsoftCompany.csproj", "{6E9E1BD5-B062-45E2-955E-35E6FA2C0C83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,10 +69,6 @@ Global
 		{19A87CEC-787F-433C-9368-BE6C315DC608}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19A87CEC-787F-433C-9368-BE6C315DC608}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19A87CEC-787F-433C-9368-BE6C315DC608}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07198C96-296C-4FA5-A8FF-E983149A25FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07198C96-296C-4FA5-A8FF-E983149A25FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07198C96-296C-4FA5-A8FF-E983149A25FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07198C96-296C-4FA5-A8FF-E983149A25FB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F55FBE2A-ECCE-4E1B-B963-63B9371FC62E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F55FBE2A-ECCE-4E1B-B963-63B9371FC62E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F55FBE2A-ECCE-4E1B-B963-63B9371FC62E}.Release|Any CPU.ActiveCfg = Release|Any CPU
