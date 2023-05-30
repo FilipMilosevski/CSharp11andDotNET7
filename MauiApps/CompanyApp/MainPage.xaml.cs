@@ -3,16 +3,17 @@
     public partial class MainPage : ContentPage
     {
         int count = 0;
-
+        public InitDatabase InitDatabase {get; set;}
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = this;
+            InitDatabase = new InitDatabase();
+
+            
         }
-        public List<Test> customList { get; set; } = new List<Test>()
-        { 
-            new() { MyProperty = "Item1" }, new() { MyProperty = "Item2" }, new() { MyProperty = "Item3" }
-        };
+        private List<User> users = new List<User>();
+        public List<User> customList { get { return users; } set { users = value; OnPropertyChanged(); } } 
+       
 
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
@@ -26,6 +27,30 @@
             public string MyProperty { get; set; }
         }
 
-        
+        private async void ContentPage_Appearing(object sender, EventArgs e)
+        {
+            customList = await InitDatabase.GetItemsAsync();
+            BindingContext = this;
+        }
+
+        private void ContentPage_Appearing_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ContentPage_Appearing_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ContentPage_Appearing_3(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ContentPage_Appearing_4(object sender, EventArgs e)
+        {
+
+        }
     }
 }

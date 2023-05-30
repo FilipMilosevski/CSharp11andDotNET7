@@ -4,7 +4,7 @@
              x:Class="MauiApp2.RegistrationPage"
              Title="RegistrationPage">
 
-    <VerticalStackLayout>
+    <VerticalStackLayout Margin="20">
         <Entry Placeholder="Insert name">
         </Entry>
         <Entry Placeholder="Insert surname">

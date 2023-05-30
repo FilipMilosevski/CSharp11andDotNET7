@@ -3,19 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CompanyApp.RegistrationPage"
              Title="RegistrationPage">
-    <VerticalStackLayout>
-        <Entry Placeholder="Insert name">
+    <VerticalStackLayout Margin="20">
+        <Entry Placeholder="Insert name" x:Name="name">
         </Entry>
-        <Entry Placeholder="Insert surname">
+        <Entry Placeholder="Insert surname" x:Name="surname">
         </Entry>
-        <Entry Placeholder="Insert phone">
+        <Entry Placeholder="Insert phone" x:Name="phone">
         </Entry>
-        <Entry Placeholder="Insert username">
+        <Entry Placeholder="Insert username" x:Name="username">
         </Entry>
-        <Entry Placeholder="Insert workposition">
+        <Entry Placeholder="Insert workposition" x:Name="workposisiton">
         </Entry>
-        <Entry Placeholder="Insert password" IsPassword="True">
+        <Entry Placeholder="Insert education" x:Name="education">
         </Entry>
-        <Button Clicked="Button_Clicked" Text="SUBMIT"></Button>
+        <Entry Placeholder="Insert password" IsPassword="True" x:Name="password">
+        </Entry>
+        <Button Clicked="Button_Clicked" Text="SUBMIT" x:Name="submit"></Button>
     </VerticalStackLayout>
 </ContentPage>

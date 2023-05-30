@@ -2,12 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CompanyApp.MainPage"
+             Appearing="ContentPage_Appearing"
              BackgroundColor="White">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Registration" Clicked="ToolbarItem_Clicked">
-            
-        </ToolbarItem>
+        <ToolbarItem Text="Registration" Clicked="ToolbarItem_Clicked"></ToolbarItem>
+
+        <ToolbarItem Text="Logout" Clicked="ToolbarItem_Clicked" Order="Primary" Priority="1"></ToolbarItem>
     </ContentPage.ToolbarItems>
                 
     <ScrollView>
@@ -25,7 +26,7 @@
                         <DataTemplate>
                             <ViewCell>
                                 <ViewCell.View>
-                                    <Label Text="{Binding MyProperty}"></Label>
+                                    <Label Text="{Binding Name}"></Label>
 
                                 </ViewCell.View>
                             </ViewCell>
