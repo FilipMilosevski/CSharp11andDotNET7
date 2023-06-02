@@ -13,7 +13,7 @@
                 
     <ScrollView>
         <VerticalStackLayout Margin="10" >
-            <VerticalStackLayout Margin="10" BackgroundColor="Crimson">
+            <VerticalStackLayout Margin="10" BackgroundColor="Navy">
                 <Frame BackgroundColor="Crimson" HeightRequest="100" CornerRadius="15">
                     <Label Text="Welcome to company app" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" FontSize="Title">
                         
