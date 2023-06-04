@@ -395,5 +395,3 @@ if (companyList != null)
 }
 
 
-SectionTitle("FILIP");
-SectionTitle("FILIPSON")
