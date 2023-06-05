@@ -394,6 +394,7 @@ if (companyList != null)
     }
 }
 
-SectionTitle("sunday");
-SectionTitle("practice");
-
+WriteLine("FILIP");
+WriteLine("VEZBA");
+WriteLine("FICO");
+WriteLine("PONEDELNIK");
