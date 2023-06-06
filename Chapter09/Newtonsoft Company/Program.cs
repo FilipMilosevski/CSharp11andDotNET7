@@ -394,7 +394,3 @@ if (companyList != null)
     }
 }
 
-WriteLine("FILIP");
-WriteLine("VEZBA");
-WriteLine("FICO");
-WriteLine("PONEDELNIK");
