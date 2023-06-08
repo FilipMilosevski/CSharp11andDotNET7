@@ -4,5 +4,11 @@
 Northwind db = new Northwind();
 WriteLine($"Provider: {db.Database.ProviderName}");
 
-WriteLine("SREDA");
-WriteLine("CETVRTOK");
+SectionTitle("filip");
+SectionTitle("proba");
+Fail("fi");
+Info("di");
+
+QueryingCategories();
+
+QueryingProducts();

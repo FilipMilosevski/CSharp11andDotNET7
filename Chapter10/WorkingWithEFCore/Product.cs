@@ -29,5 +29,5 @@ public class Product
 
     public int CategoryId { get; set; }
 
-    public virtual Category category { get; set; } = null;
+    public virtual Category Category { get; set; } = null;
 }

@@ -15,7 +15,7 @@ public class Northwind : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        string path = Path.Combine(Environment.CurrentDirectory, "Northwind.db");
+        string path = Path.Combine(Environment.CurrentDirectory,"sql-scripts", "Northwind.db");
         string connection = $"FileName = {path}";
 
         ConsoleColor previousColor = ForegroundColor;
