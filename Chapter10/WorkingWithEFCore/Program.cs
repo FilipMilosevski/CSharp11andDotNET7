@@ -45,5 +45,3 @@ ListProducts(new int[] { resultAdd1.productId });
 //ListProducts();
 
 
-WriteLine("filip");
-WriteLine("milosevski");
