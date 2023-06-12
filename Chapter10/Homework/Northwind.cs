@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,10 +10,14 @@ namespace Packt.Shared;
 
 public class Northwind : DbContext
 {
-   
+
+    public DbSet<Category> Categories { get; set; }
+    public DbSet<Product> Products { get; set; }    
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        string path = Path.Combine(Environment.CurrentDirectory, "Northwind.db");
+
+        string path = Path.Combine(Environment.CurrentDirectory,"sql-scripts", "Northwind.db");
         string connection = $"FileName = {path}";
 
         ConsoleColor previousColor = ForegroundColor;
