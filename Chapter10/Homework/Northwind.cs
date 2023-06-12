@@ -22,5 +22,14 @@ public class Northwind : DbContext
       
         optionsBuilder.UseSqlite(connection);
     }
-    
+
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Category>().Property(c => c.CategoryName).IsRequired().HasMaxLength(15);
+        if(Database.ProviderName?.Contains("Sqlite") ?? false)
+        {
+            modelBuilder.Entity<Product>().Property(p => p.Cost).HasConversion<double>();
+        }
+    }
 }

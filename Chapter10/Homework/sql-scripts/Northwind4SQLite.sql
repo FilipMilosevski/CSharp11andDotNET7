@@ -238,4 +238,4 @@ INSERT INTO "Customers" VALUES('FURIB','Furia Bacalhau e Frutos do Mar','Lino Ro
 INSERT INTO "Customers" VALUES('GALED','Galería del gastrónomo','Eduardo Saavedra','Marketing Manager','Rambla de Cataluña, 23','Barcelona',NULL,'08022','Spain','(93) 203 4560','(93) 203 4561');
 INSERT INTO "Customers" VALUES('GODOS','Godos Cocina Típica','José Pedro Freyre','Sales Manager','C/ Romero, 33','Sevilla',NULL,'41101','Spain','(95) 555 82 82',NULL);
 INSERT INTO "Customers" VALUES('GOURL','Gourmet Lanchonetes','André Fonseca','Sales Associate','Av. Brasil, 442','Campinas','SP','04876-786','Brazil','(11) 555-9482',NULL);
-INSERT INTO "Customers" VALUES('GREAL','aaa sss','And onseca','Sales ','Brasil, 2','inas','S','048786','Braz','555-9482',NULL);
+INSERT INTO "Customers" VALUES('GREAL','aaa sss aaaaaaaaaaa','And onsecaaaa','Sales wwwwwwwww','Brasil, 2222222','inas1212','Sa','048786111','Braz11','555-9482ddddd',NULL);
