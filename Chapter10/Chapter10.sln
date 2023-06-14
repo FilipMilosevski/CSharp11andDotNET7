@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticeEntity", "PracticeE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework", "Homework\Homework.csproj", "{7CF3454F-832E-47B3-82C8-DAAB2AFC8F8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginProject", "LoginProject\LoginProject.csproj", "{ED990C9A-5136-4155-A9A4-72A8815C1AC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoginProject", "LoginProject\LoginProject.csproj", "{ED990C9A-5136-4155-A9A4-72A8815C1AC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeLoginProjectApp", "PracticeLoginProjectApp\PracticeLoginProjectApp.csproj", "{E5D0D1BE-4839-4FB7-8689-FA066234FB2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{ED990C9A-5136-4155-A9A4-72A8815C1AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED990C9A-5136-4155-A9A4-72A8815C1AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED990C9A-5136-4155-A9A4-72A8815C1AC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5D0D1BE-4839-4FB7-8689-FA066234FB2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5D0D1BE-4839-4FB7-8689-FA066234FB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5D0D1BE-4839-4FB7-8689-FA066234FB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5D0D1BE-4839-4FB7-8689-FA066234FB2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
