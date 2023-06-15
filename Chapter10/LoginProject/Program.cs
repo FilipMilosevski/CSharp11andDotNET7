@@ -1,7 +1,6 @@
 ﻿
 //Create account
 using LoginProject;
-using System.Text.RegularExpressions;
 
 
 SeedToLoginDB db = new SeedToLoginDB();
@@ -12,7 +11,3 @@ LoginOrCreateUser.Login();
 
 //LoginOrCreateUser.Create();
 
-Console.WriteLine("ss");
-Console.WriteLine(1);
-Console.WriteLine(1);
-Console.WriteLine(1);

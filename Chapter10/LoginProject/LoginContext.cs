@@ -5,13 +5,13 @@ namespace LoginProject
 {
     public class LoginContext : DbContext
     {
-        public DbSet<User> users {get; set; }
-        public DbSet<Role> roles{ get; set; }
+        public DbSet<User> users { get; set; }
+        public DbSet<Role> roles { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-      {
-        optionsBuilder.UseSqlite($"Filename = {Path.Combine(Environment.CurrentDirectory,"Login.db")}");
-      }
+        {
+            optionsBuilder.UseSqlite($"Filename = {Path.Combine(Environment.CurrentDirectory, "Login.db")}");
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
