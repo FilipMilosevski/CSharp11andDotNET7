@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PracticeProject1
 {
-    internal class Employee
+    public class Employee
     {
     }
 }
