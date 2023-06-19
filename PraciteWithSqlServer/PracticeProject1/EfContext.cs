@@ -13,15 +13,19 @@ namespace PracticeProject1
         public DbSet<Department> Departments { get; set; }
 
 
-        private const string connectionString = "Server=Filip;Database=Filip123;Trusted_Connection=SSPI;Encrypt=false;TrustServerCertificate=true";
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { optionsBuilder.UseSqlServer(connectionString); }
-
+     
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer($"Filename = {Path.Combine(Environment.CurrentDirectory, "PracticeDatabase.db")}");
+            optionsBuilder.UseSqlServer($"Filename  =  {Path.Combine(Environment.CurrentDirectory, "fil.db")}");
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Department>().Property(c => c.DepartmentName).IsRequired().HasMaxLength(15);
+            if(Database.ProviderName?.Contains("SqlServer")?? false)
+            {
+                modelBuilder.Entity<Employee>().Property(p => p.EmployeeId).HasMaxLength(15);
+            }
         }
 
-     
     }
 }

@@ -8,5 +8,8 @@ namespace PracticeProject1
 {
     public class Employee
     {
+
+        public int EmployeeId { get; set; }
+
     }
 }
