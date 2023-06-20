@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginPractice.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -71,6 +72,11 @@ namespace LoginPractice
 
                 if (isUsernameAllowed(_username) && isPasswordAllowed(_password) && _password == _confirmPassword)
                 {
+                    User loggedInUser;
+                    using(LoginContext context = new LoginContext())
+                    {
+                        loggedInUser = context.users.Where(u => u.Username == _username && u.Password == _password).FirstOrDefault();
+                    }
                     _isCorrect = true;
                 }
                 else
