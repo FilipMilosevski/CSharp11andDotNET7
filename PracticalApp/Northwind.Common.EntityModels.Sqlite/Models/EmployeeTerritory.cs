@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 
 namespace Packt.Shared;
 
@@ -10,8 +8,11 @@ namespace Packt.Shared;
 public partial class EmployeeTerritory
 {
     [Column(TypeName = "INT")]
-    public long EmployeeId { get; set; }
+    public int EmployeeId { get; set; }
 
-    [Column(TypeName = "nvarchar] (20")]
+
+    [Required]
+    [Column(TypeName = "nvarchar (20)")]
+    [StringLength(20)]
     public string TerritoryId { get; set; } = null!;
 }
