@@ -180,46 +180,25 @@ namespace LoginPractice
             }
             return false;
         }
-        private static void ChooseAction(RoleName roleName , Guid userId)
+        private static void ChooseAction(RoleName roleName, Guid userId)
         {
             int action = 0;
+
             switch (roleName)
             {
                 case RoleName.Admin:
-                    {
-
-                        Console.WriteLine("Available actions:  1.List Users, 2.Delete User, 3.Edit, 4.Exit");
-                        Console.WriteLine("Example (1)");
-                        try
-                        {
-                            action = Convert.ToInt32(Console.ReadLine());
-                            ActionLoader(action, roleName, userId);
-
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine("       ===       EXCEPTION       ===");
-                            Console.WriteLine(ex.ToString());
-                            ChooseAction(roleName , userId);
-                        }
-                    }
-                    break;
-
-               
                 case RoleName.Vip:
                     {
-
-                        Console.WriteLine("Available actions:  2.Delete User, 3.Edit, 4.Exit ");
-                        Console.WriteLine("Example (2)");
+                        Console.WriteLine("Available actions: 1. List users, 2. Delete, 3. Edit, 4. Exit");
+                        Console.WriteLine("Example: 1");
                         try
                         {
                             action = Convert.ToInt32(Console.ReadLine());
                             ActionLoader(action, roleName, userId);
-
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("       ===       EXCEPTION       ===");
+                            Console.WriteLine("----- Exception -----");
                             Console.WriteLine(ex.ToString());
                             ChooseAction(roleName, userId);
                         }
@@ -228,17 +207,16 @@ namespace LoginPractice
                 case RoleName.Regular:
                 case RoleName.Guest:
                     {
-                        Console.WriteLine("Available actions:  2.Delete User, 4.Exit ");
-                        Console.WriteLine("Example (2)");
+                        Console.WriteLine("Available actions: 2. Delete, 3. Edit, 4. Exit");
+                        Console.WriteLine("Example: 2");
                         try
                         {
                             action = Convert.ToInt32(Console.ReadLine());
                             ActionLoader(action, roleName, userId);
-
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("       ===       EXCEPTION       ===");
+                            Console.WriteLine("----- Exception -----");
                             Console.WriteLine(ex.ToString());
                             ChooseAction(roleName, userId);
                         }
@@ -246,7 +224,6 @@ namespace LoginPractice
                     break;
                 default:
                     break;
-
             }
         }
 
@@ -256,25 +233,31 @@ namespace LoginPractice
             {
                 case 1:
                     {
-                            using(LoginContext context = new LoginContext())
+                        if (roleName != RoleName.Guest || roleName != RoleName.Regular)
                         {
-                            List<User> users = context.users.Include(u => u.Role).ToList();
-                            if(users == null)
+
+
+                            using (LoginContext context = new LoginContext())
                             {
-                                Console.WriteLine("No users found");
-                            }
-                            else
-                            {
-                                Console.WriteLine("| {0,5} | {1,15} | {2,10} |","Nr.", "Username","Role" );
-                            }
-                            foreach (User user in users)
-                            {
-                                Console.WriteLine("----------------------------------------");
-                                Console.WriteLine("| {0,5} | {1,15} | {2,10} |", users.IndexOf(user) + 1, user.Username, user.Role.RoleName);
-                              
+                                List<User> users = context.users.Include(u => u.Role).ToList();
+                                if (users == null)
+                                {
+                                    Console.WriteLine("No users found");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("| {0,5} | {1,15} | {2,10} |", "Nr.", "Username", "Role");
+                                }
+                                foreach (User user in users)
+                                {
+                                    Console.WriteLine("----------------------------------------");
+                                    Console.WriteLine("| {0,5} | {1,15} | {2,10} |", users.IndexOf(user) + 1, user.Username, user.Role.RoleName);
+
+                                }
                             }
                         }
- 
+                     ChooseAction(roleName, userId);
+
                     }
                     break;
                 case 2:
