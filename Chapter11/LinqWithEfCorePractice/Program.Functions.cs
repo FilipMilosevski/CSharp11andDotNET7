@@ -7,7 +7,7 @@ partial class Program
     {
         static void Filterandsort1()
     {
-        SectionTitle("INSTANCA OD NORTHWIND CONTEXT PREKU DB SET");
+        SectionTitle("INSTANCA OD NORTHWIND CONTEXT PREKU DB SET PRV NACIN");
         using(NorthwindPractice db = new NorthwindPractice())
         {
             DbSet<Product> allproducts = db.Products;
@@ -18,6 +18,10 @@ partial class Program
                 WriteLine("This is ID : {0}    |   This is name : {1}   |   This is the price : {2:C}", p.ProductId, p.ProductName, p.UnitPrice);
 
             }
+            SectionTitle("INSTANCA OD NORTHWIND CONTEXT PREKU DB SET VTOR NACIN");
+
+            WriteLine(sortAndFilterProducts.ToQueryString()+":     OVA E DODATNO");
+
         }
     }
         static void Filterandsort2()
@@ -46,8 +50,30 @@ partial class Program
                 WriteLine("This is ID : {0}    |   This is name : {1}   |   This is the price : {2:C}", p.ProductId, p.ProductName, p.UnitPrice);
 
             }
+
         }
     }
+    static void Filterandsortquery()
+    {
+        using(NorthwindPractice context = new NorthwindPractice())
+        {
+            SectionTitle("QUERY PRV NACIN");
 
+            IQueryable<Product> products = 
+                from product in context.Products
+                where product.UnitPrice < 10M
+                orderby product.UnitPrice descending 
+                select product;
+
+            foreach (Product p in products)
+            {
+                WriteLine("This is ID : {0}    |   This is name : {1}   |   This is the price : {2:C}", p.ProductId, p.ProductName, p.UnitPrice);
+
+            }
+            SectionTitle("QUERY VTOR NACIN");
+
+            WriteLine(products.ToQueryString());
+        }
+    }
     }
 
