@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 
 namespace Packt.Shared;
 
@@ -13,6 +11,7 @@ public partial class Category
     public long CategoryId { get; set; }
 
     [Column(TypeName = "nvarchar (15)")]
+    [StringLength(15)]
     public string CategoryName { get; set; } = null!;
 
     [Column(TypeName = "ntext")]

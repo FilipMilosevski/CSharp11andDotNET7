@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 
 namespace Packt.Shared;
 
@@ -20,19 +18,20 @@ public partial class Order
     public long OrderId { get; set; }
 
     [Column(TypeName = "nchar (5)")]
+    [StringLength(5)]
     public string? CustomerId { get; set; }
 
     [Column(TypeName = "INT")]
     public long? EmployeeId { get; set; }
 
     [Column(TypeName = "datetime")]
-    public byte[]? OrderDate { get; set; }
+    public DateTime[]? OrderDate { get; set; }
 
     [Column(TypeName = "datetime")]
-    public byte[]? RequiredDate { get; set; }
+    public DateTime[]? RequiredDate { get; set; }
 
     [Column(TypeName = "datetime")]
-    public byte[]? ShippedDate { get; set; }
+    public DateTime[]? ShippedDate { get; set; }
 
     [Column(TypeName = "INT")]
     public long? ShipVia { get; set; }
@@ -41,21 +40,27 @@ public partial class Order
     public byte[]? Freight { get; set; }
 
     [Column(TypeName = "nvarchar (40)")]
+    [StringLength(40)]
     public string? ShipName { get; set; }
 
     [Column(TypeName = "nvarchar (60)")]
+    [StringLength(60)]
     public string? ShipAddress { get; set; }
 
     [Column(TypeName = "nvarchar (15)")]
+    [StringLength(15)]
     public string? ShipCity { get; set; }
 
     [Column(TypeName = "nvarchar (15)")]
+    [StringLength(15)]
     public string? ShipRegion { get; set; }
 
     [Column(TypeName = "nvarchar (10)")]
+    [StringLength(10)]
     public string? ShipPostalCode { get; set; }
 
     [Column(TypeName = "nvarchar (15)")]
+    [StringLength(15)]
     public string? ShipCountry { get; set; }
 
     [ForeignKey("CustomerId")]

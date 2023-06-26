@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 
 namespace Packt.Shared;
 
@@ -17,6 +15,7 @@ public partial class Product
     public long ProductId { get; set; }
 
     [Column(TypeName = "nvarchar (40)")]
+    [StringLength(40)]
     public string ProductName { get; set; } = null!;
 
     [Column(TypeName = "INT")]
@@ -26,6 +25,7 @@ public partial class Product
     public long? CategoryId { get; set; }
 
     [Column(TypeName = "nvarchar (20)")]
+    [StringLength(20)]
     public string? QuantityPerUnit { get; set; }
 
     [Column(TypeName = "money")]
