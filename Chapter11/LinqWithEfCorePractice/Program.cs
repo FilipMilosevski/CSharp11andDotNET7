@@ -13,3 +13,5 @@ Filterandsortquery();
 
 WriteLine("FILIP");
 WriteLine("NEDELA");
+
+myfilter();

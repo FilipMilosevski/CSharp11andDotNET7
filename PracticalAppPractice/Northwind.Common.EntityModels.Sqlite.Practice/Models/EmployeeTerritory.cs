@@ -12,6 +12,7 @@ public partial class EmployeeTerritory
 
 
     [Required]
-    [Column(TypeName = "nvarchar] (20")]
+    [Column(TypeName = "nvarchar (20)")]
+    [StringLength(20)]
     public string TerritoryId { get; set; } = null!;
 }

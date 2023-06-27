@@ -15,14 +15,17 @@ namespace Packt.Shared;
 public partial class Order
 {
     [Key]
-    public long OrderId { get; set; }
+    public int OrderId { get; set; }
+
 
     [Column(TypeName = "nchar (5)")]
     [StringLength(5)]
+    [RegularExpression("[A-Z]{5}")]
+
     public string? CustomerId { get; set; }
 
     [Column(TypeName = "INT")]
-    public long? EmployeeId { get; set; }
+    public int? EmployeeId { get; set; }
 
     [Column(TypeName = "datetime")]
     public DateTime[]? OrderDate { get; set; }
@@ -34,10 +37,10 @@ public partial class Order
     public DateTime[]? ShippedDate { get; set; }
 
     [Column(TypeName = "INT")]
-    public long? ShipVia { get; set; }
+    public int? ShipVia { get; set; }
 
     [Column(TypeName = "money")]
-    public byte[]? Freight { get; set; }
+    public decimal[]? Freight { get; set; }
 
     [Column(TypeName = "nvarchar (40)")]
     [StringLength(40)]
