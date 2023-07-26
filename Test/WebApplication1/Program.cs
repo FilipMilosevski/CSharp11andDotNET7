@@ -23,3 +23,6 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
+
+
+//with example asp .net razor pages content
