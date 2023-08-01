@@ -20,11 +20,3 @@ html {
 body {
   margin-bottom: 60px;
 }
-
-#category-div{
-    background-color: lightgray;
-}
-
-#product-columns {
-    column-count: 3;
-}

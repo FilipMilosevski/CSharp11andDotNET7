@@ -10,10 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 var connectionStringNorthwind = builder.Configuration.GetConnectionString("NorthwindConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
-builder.Services.AddDbContext<NorthwindContext>(options =>
-    options.UseSqlServer(connectionStringNorthwind));
+builder.Services.AddDbContext<ApplicationDbContext>(options =>options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<NorthwindContext>(options =>options.UseSqlServer(connectionStringNorthwind));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
