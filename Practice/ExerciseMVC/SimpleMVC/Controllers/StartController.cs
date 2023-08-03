@@ -13,7 +13,11 @@ namespace SimpleMVC.Controllers
             myCard.Text = "text example for a template card. Simple MVC project info.";
             myCard.AlternativeText = "image of a duck";
             myCard.Title = "Card Example";
-            return View(myCard); 
+
+            
+            return View(myCard);
+
+          
         }
     }
 }
