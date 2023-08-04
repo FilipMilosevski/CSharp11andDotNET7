@@ -1,19 +1,22 @@
 ﻿@using SimpleMVC.Models;
-@model Card
-@{
-    ViewBag.Title = "SimpleMVC - Index";
- 
-}
+@model List<Card>
 
-<h1 class="text-center bg-black text-light">My first simple MVC project!</h1>
+<h1 style="display: flex">Card Examples</h1>
 
-
-<div class="card" style="width: 18rem;">
-    <img src="~/images/@Model.Image" class="card-img-top" alt="@Model.AlternativeText">
-    <div class="card-body">
-        <h5 class="card-title">@Model.Title</h5>
-        <p class="card-text">@Model.Text</p>
-        <a asp-controller="Card" asp-action="Details" asp-route-id="@Model.CardID" class="btn btn-primary">Go to details</a>
+<div style="display: flex; justify-content: space-between;">
+@foreach (var card in Model)
+{
+    <div class="card" style="width: 18rem;">
+        <img src="~/images/@card.Image" class="card-img-top" alt="@card.AlternativeText">
+        <div class="card-body">
+            <h5 class="card-title">@card.Title</h5>
+            <p class="card-text">@card.Text</p>
+            <a asp-controller="Card" asp-action="Details" asp-route-id="@card.CardID" class="btn btn-primary">Go to details</a>
+        </div>
     </div>
+}
 </div>
+
+
+
 
