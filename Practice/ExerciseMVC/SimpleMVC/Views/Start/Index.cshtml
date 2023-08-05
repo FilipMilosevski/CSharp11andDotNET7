@@ -1,9 +1,56 @@
 ﻿@using SimpleMVC.Models;
-@model List<Card>
+@*@model List<Card>*@
+@model Card
 
-<h1 style="display: flex">Card Examples</h1>
+<div style="text-align:center">
+    <h1>Animals</h1>
+</div>
+     
 
-<div style="display: flex; justify-content: space-between;">
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">Animals</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+        
+    </div>
+</nav>
+
+
+
+<div style="display: flex; justify-content: space-between; margin-top:30px;">
+
+    <div class="card" style="width: 18rem;">
+            <img src="~/images/@Model.Image" class="card-img-top" alt="@Model.AlternativeText">
+        <div class="card-body">
+                <h5 class="card-title">@Model.Title</h5>
+            <p class="card-text">@Model.Text</p>
+            <a asp-controller="Card" asp-action="Details" asp-route-id="@Model.CardID" class="btn btn-primary">Go to details</a>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+@*<div style="display: flex; justify-content: space-between; margin-top:30px;">
 @foreach (var card in Model)
 {
     <div class="card" style="width: 18rem;">
@@ -17,6 +64,5 @@
 }
 </div>
 
-
-
+*@
 

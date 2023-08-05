@@ -2,11 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using SimpleMVC.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+string connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<SimpleMvcDbContext>(option => option.UseSqlServer(connectionString));
 
 builder.Services.AddControllersWithViews();
-//builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -19,6 +18,5 @@ app.MapControllerRoute(
     name:"default", 
     pattern:"{controller=Start}/{action=Index}");
 
-//app.MapRazorPages();
 
 app.Run();
