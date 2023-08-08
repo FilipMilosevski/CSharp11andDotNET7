@@ -7,9 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="SqlDataSeed\" />
+    <Folder Include="wwwroot\images\products\" />
     <Folder Include="wwwroot\lib\" />
-    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
   <ItemGroup>

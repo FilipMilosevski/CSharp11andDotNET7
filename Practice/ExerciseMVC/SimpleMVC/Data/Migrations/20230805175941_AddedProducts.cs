@@ -50,7 +50,6 @@ namespace SimpleMVC.Data.Migrations
                     Summary = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
                     ProductName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
-                    ColorID = table.Column<int>(type: "int", nullable: false),
                     Color = table.Column<int>(type: "int", nullable: false),
                     CategoryID = table.Column<int>(type: "int", nullable: false)
                 },

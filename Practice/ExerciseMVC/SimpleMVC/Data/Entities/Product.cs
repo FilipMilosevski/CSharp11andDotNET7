@@ -33,7 +33,6 @@ namespace SimpleMVC.Data.Entities
 
         [ForeignKey("FK_Color_Product")]
 
-        public int ColorID { get; set; }
         public Color Color { get; set; }
 
 

@@ -1,63 +1,62 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using SimpleMVC.Data;
+using SimpleMVC.Data.Entities;
 using SimpleMVC.Models;
 
 namespace SimpleMVC.Controllers
 {
     public class StartController : Controller
     {
+        private SimpleMvcDbContext _db;
+        public StartController(SimpleMvcDbContext dbInject)
+        {
+            _db = dbInject;
+        }
+
         public IActionResult Index()
         {
 
-            //List<Card> cards = new List<Card>();
-
-            //Card card1 = new Card();
-            //card1.CardID = 1;
-            //card1.Image = "myImg.jpg";
-            //card1.Text = "Quacking, funny, fast, migratory, feathered, waddling, versatile, herbivorous, adorable, vocal.";
-            //card1.AlternativeText = "image of a duck";
-            //card1.Title = "Duck";
-            //cards.Add(card1);
-
-            //Card card2 = new Card();
-            //card2.CardID = 2;
-            //card2.Image = "dog.jpg";
-            //card2.Text = "Loyal, friendly, playful, furry, obedient, protective, affectionate, intelligent, joyful, energetic.";
-            //card2.AlternativeText = "image of a cat";
-            //card2.Title = "Dog";
-            //cards.Add(card2);
-
-            //Card card3 = new Card();
-            //card3.CardID = 3;
-            //card3.Image = "cat.jpg";
-            //card3.Text = "Cuddly, agile, whiskered, curious, independent, elegant, playful, mysterious, purring, adorable.";
-            //card3.AlternativeText = "image of a cat";
-            //card3.Title = "Cat";
-            //cards.Add(card3);
-
-
-
-
-            //return View(cards);
-
-            ///////////////
-
-            //Card card1 = new Card();
-            //card1.CardID = 1;
-            //card1.Image = "myImg.jpg";
-            //card1.Text = "Quacking, funny, fast, migratory, feathered, waddling, versatile, herbivorous, adorable, vocal.";
-            //card1.AlternativeText = "image of a duck";
-            //card1.Title = "Duck";
-            //cards.Add(card1);
-
-
-            Card myCard = new Card();
-            myCard.CardID = 1;
-            myCard.Image = "myImg.jpg";
-            myCard.Text = "Quacking, funny, fast, migratory, feathered, waddling, versatile, herbivorous, adorable, vocal.";
-            myCard.AlternativeText = "image of a duck";
-            myCard.Title = "Duck";
-            return View(myCard);
-
+            List<Product> products = null;
+            try
+            {
+                products = _db.Products.ToList();
+            }
+            catch (Exception ex)
+            {
+                return View("ErrorPage", ex);
+            }
+            List<Card> cards = new List<Card>();
+            foreach (Product product in products)
+            {
+                cards.Add(MapCardWithProduct(product));
+            }
+            return View(cards);
         }
+        #region Helpers
+        private Card MapCardWithProduct(Product product)
+        {
+            Card myCard = new Card();
+            if (product != null)
+            {
+                myCard.CardID = product.ProductID;
+                myCard.AlternativeText = "Image of a product";
+                myCard.Text = product.Summary;
+                myCard.Title = product.ProductName;
+                myCard.Image = "products/" + product.ImageName;
+            }
+            else
+            {
+                myCard.CardID = 0;
+                myCard.AlternativeText = "Image not found";
+                myCard.Text = "...";
+                myCard.Title = "Not found";
+                myCard.Image = "";
+            }
+           
+
+            return myCard;
+        }
+        #endregion
     }
 }

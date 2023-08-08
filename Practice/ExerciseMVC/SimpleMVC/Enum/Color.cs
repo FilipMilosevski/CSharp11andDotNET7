@@ -23,7 +23,7 @@ namespace SimpleMVC.Enum
         Khaki,
         LawnGreen,
         LightGreen,
-        LightSkyBlue,
+        LightBlue,
         Linen,
         MediumOrchid,
         MediumPurple,
@@ -40,5 +40,10 @@ namespace SimpleMVC.Enum
         SandyBrown,
         SeaGreen,
         SteelBlue,
+        Charcoal,
+        Navy,
+        Indigo,
+        Beige,
+        Brown
     };
 }
