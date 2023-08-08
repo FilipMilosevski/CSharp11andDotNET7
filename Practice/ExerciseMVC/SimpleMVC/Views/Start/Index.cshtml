@@ -1,10 +1,16 @@
 ﻿@using SimpleMVC.Models;
-@*@model List<Card>*@
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @model List<Card>
 
 @{
 	ViewBag.Title = "SimpleMVC - Index";
 }
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/index.css" />
+</head>
+    
+
 <h1 class="text-center bg-black text-light">My first simple MVC</h1>
 <div class="row d-flex flex-wrap justify-content-between gap-3">
 @foreach (Card item in Model)
@@ -14,7 +20,7 @@
         <div class="card-body">
             <h5 class="card-title">@item.Title</h5>
             <p class="card-text">@item.Text</p>
-            <a asp-controller="Card" asp-action="Details" asp-route-id="@item.CardID" class="btn btn-primary">Go to details</a>
+            <a asp-controller=@item.Controller asp-action=@item.Action asp-route-id="@item.CardID" class="btn btn-primary">Go to details</a>
         </div>
     </div>
 

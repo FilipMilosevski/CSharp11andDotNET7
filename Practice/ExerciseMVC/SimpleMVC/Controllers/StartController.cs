@@ -44,6 +44,8 @@ namespace SimpleMVC.Controllers
                 myCard.Text = product.Summary;
                 myCard.Title = product.ProductName;
                 myCard.Image = "products/" + product.ImageName;
+                myCard.Controller = "Product";
+                myCard.Action = "Details";
             }
             else
             {

@@ -1,0 +1,17 @@
+﻿@using SimpleMVC.Data.Entities;
+@model Product
+@{
+
+}
+
+
+<div class="row">
+    <img src="~/images/products/@Model.ImageName" alt="..." />
+    <p>@Model.ProductID</p>
+    <p>@Model.ProductName</p>
+    <p>@Model.Category.CategoryName</p>
+    <p>@Model.Summary</p>
+    <p>@Model.Price</p>
+    <p>@Model.Color</p>
+
+</div>
