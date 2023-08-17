@@ -31,6 +31,16 @@
         }
     });
 
+    $('.humberger__menu__nav ul li').click(function () {
+        $('.humberger__menu__nav ul li.active').removeClass('active');
+        $(this).addClass('active');
+    });
+    
+    $('.header__menu ul li').click(function () {
+        console.log(this);
+        $('.header__menu ul li.active').removeClass('active');
+        $(this).addClass('active');
+    });
     /*------------------
         Background Set
     --------------------*/
