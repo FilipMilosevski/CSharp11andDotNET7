@@ -46,3 +46,7 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.Run();
+
+
+Console.WriteLine("Filip");
+Console.WriteLine("Proekt");
