@@ -23,6 +23,6 @@ namespace Ogani.Areas.Admin.Controllers
             List<Product> products = _db.Products.ToList();
             return View(products);
         
-        }
+        }       
     }
 }

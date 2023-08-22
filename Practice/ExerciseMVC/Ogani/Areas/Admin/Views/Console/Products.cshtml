@@ -28,33 +28,41 @@
                         <tr>
                             <th>Name</th>
                             <th>Short Description</th>
-                            <th>Office</th>
+                            <th>Image Name</th>
                             <th>Weight</th>
                             <th>Price</th>
-                            <th>Image Name</th>
+                            <th>Config</th>
 
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>Short Description</th>
+                            <th>Image Name</th>
+                            <th>Weight</th>
+                            <th>Price</th>
+                            <th>Config</th>
+
                         </tr>
                     </tfoot>
                     <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
-                        </tr>
-                       
+                      
+                        @foreach (Product product in Model)
+                        {
+                            <tr>
+                                <td>@product.ProductName</td>
+                                <td>@product.ProductShortDescription</td>
+                                <td>@product.ProductImageName</td>
+                                <td>@product.ProductWeight</td>
+                                <td>@product.ProductPrice</td>
+                                <td>
+                                    <a class="btn btn-info">View</a>
+                                    <a class="btn btn-success">Edit</a>
+                                    <a class="btn btn-danger">X</a>
+                                </td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>
