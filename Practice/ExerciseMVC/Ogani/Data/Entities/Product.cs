@@ -10,7 +10,7 @@ namespace Ogani.Data.Entities
         public Guid ProductID { get; set; }
 
         [Required]
-        [StringLength(50)]  
+        [StringLength(50,ErrorMessage = "Product name is too long, max length is 50 caracters")]  
         public string? ProductName { get; set; }
 
         [Required]

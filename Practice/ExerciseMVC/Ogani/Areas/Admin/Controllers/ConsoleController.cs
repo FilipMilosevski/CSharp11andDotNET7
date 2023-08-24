@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Ogani.Data;
 using Ogani.Data.Entities;
 
@@ -18,9 +19,9 @@ namespace Ogani.Areas.Admin.Controllers
             return View();
         }
 
-        public IActionResult Products()
+        public async Task<IActionResult> Products()
         {
-            List<Product> products = _db.Products.ToList();
+            List<Product> products = await _db.Products.ToListAsync();
             return View(products);
         
         }       
