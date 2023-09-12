@@ -24,6 +24,13 @@ namespace Ogani.Areas.Admin.Controllers
             List<Product> products = await _db.Products.ToListAsync();
             return View(products);
         
-        }       
+        }
+
+        public async Task<IActionResult> Categories()
+        {
+            List<Category> products = await _db.Categories.ToListAsync();
+            return View(products);
+
+        }
     }
 }
